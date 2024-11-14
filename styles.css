@@ -1,154 +1,201 @@
-/* General Body Styling */
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  color: #333;
-  background-color: #FFFFFF;
+/* General Colors */
+:root {
+  --white: #FFFFFF;
+  --soft-pink: #FFCAD4;
+  --light-teal: #B0D0D3;
+  --muted-purple: #C08497;
+  --coral: #F7AF9D;
+  --background-color: #FCF5F5;
+}
+
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Fixed Header Styling */
-.fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #FFFFFF;
-  border-bottom: 2px solid #FFCADD;
+body {
+  font-family: 'Iowan Old Style', serif;
+  background-color: var(--background-color);  /* Changed background color */
+  color: var(--muted-purple);
+}
+
+/* Header */
+header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  z-index: 1000;
+  padding: 20px;
+  font-family: 'Irish Grover', cursive;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 
-.fixed-header .header-left a,
-.fixed-header .header-right a {
-  color: #C08497;
+#name {
+  font-size: 1.2em;  /* Smaller font size */
+  color: var(--muted-purple);
+  position: absolute;
+  top: 10px;
+  left: 5%;  /* Shift name to the left */
+  letter-spacing: 2px;  /* Increase space between Gauri and Sastri */
+}
+
+nav {
+  position: absolute;
+  top: 10px;
+  left: 5%;  /* Aligning the nav links to the top left */
+  display: flex;
+  gap: 30px;  /* Added gap between buttons */
+}
+
+nav a {
+  margin: 0;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
+  color: black;
+  font-family: 'Iowan Old Style', serif;
+  padding: 10px 20px;  /* Added padding */
+  border-radius: 5px;  /* Optional: rounded corners for a smoother look */
+  transition: background-color 0.3s ease;
 }
 
-.fixed-header .header-right a {
-  margin-left: 20px;
+nav a:hover {
+  background-color: var(--muted-purple);  /* Optional: background color change on hover */
+  color: var(--white);  /* Optional: text color change on hover */
 }
 
-.fixed-header a:hover {
-  color: #B0D0D3;
-}
-
-/* Adjust for header */
-.section, .home-content {
-  padding-top: 80px;
-  padding-bottom: 40px;
-}
-
-.home-content {
+/* Main Banner */
+.banner {
   text-align: center;
-  background-color: #FFCADD;
-  color: #ffffff;
+  background-color: var(--white);
+  padding: 150px 20px;
+  position: relative;
 }
 
-.home-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.banner h1 {
+  font-size: 8vw;
+  color: var(--coral);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.5s;
 }
 
-.home-content p {
-  font-size: 1.25rem;
-  color: #C08497;
+.banner h2 {
+  font-size: 8vw;
+  color: var(--muted-purple);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1s forwards 1s;
 }
 
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid #B0D0D3;
-  margin-bottom: 15px;
+.banner img {
+  width: 200px;       /* Set the width to a fixed value */
+  height: 200px;      /* Set the height to match the width (square) */
+  object-fit: cover;  /* Ensures the image covers the square without distorting it */
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  z-index: 2;
+  border-radius: 10px; /* Optional: adds rounded corners if desired */
 }
 
 /* About Me Section */
-#about {
-  background-color: #F7AF9D;
-  color: #ffffff;
+.about {
+  background-color: var(--soft-pink);
   text-align: center;
+  padding: 100px 20px;
+  opacity: 0;
+  animation: fadeIn 1s forwards 2s;
 }
 
-#about h2 {
-  color: #C08497;
+.about h3 {
+  font-family: 'Irish Grover', cursive;
+  font-size: 2.5em;
+  color: var(--muted-purple);
+  margin-bottom: 20px;
 }
 
-/* Projects Section */
-#projects {
-  background-color: #F0F0F0;
+.about p {
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.8;
+  font-size: 1.2em;
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 150px 20px;
   text-align: center;
+  background-color: var(--light-teal);
+  opacity: 0;
+  animation: fadeIn 1s forwards 2.5s;
 }
 
-.projects-container {
+.portfolio h3 {
+  font-family: 'Irish Grover', cursive;
+  color: var(--white);
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.project-circles {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeIn 1s forwards 3s;
 }
 
-.project-card {
-  background-color: #F7AF9D;
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  text-align: left;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-
-.project-card p {
-  font-size: 1.1rem;
-  color: #B0D0D3;
-}
-
-.project-card a {
-  font-size: 1.1rem;
-  color: #b46d83;
-  text-decoration: none;
+.project-circle {
+  width: 180px;
+  height: 180px;
+  background-color: var(--muted-purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.2em;
   font-weight: bold;
-  display: block;
-  margin-top: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  padding: 10px;
 }
 
-.project-card a:hover {
-  text-decoration: underline;
+.project-circle:hover {
+  transform: scale(1.2);
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
-  background-color: #C08497;
-  color: #fff;
-  padding: 20px;
+  background-color: var(--white);
+  color: var(--coral);
   text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2em;
 }
 
 footer a {
-  color: #fff;
-  text-decoration: none;
+  color: var(--coral);
+  text-decoration: underline;
 }
 
-footer a:hover {
-  text-decoration: underline;
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
