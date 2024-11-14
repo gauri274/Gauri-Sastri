@@ -17,7 +17,7 @@
 
 body {
   font-family: 'Iowan Old Style', serif;
-  background-color: var(--background-color);  /* Changed background color */
+  background-color: var(--background-color);
   color: var(--muted-purple);
 }
 
@@ -26,50 +26,51 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  font-family: 'Irish Grover', cursive;
+  font-family: 'Iowan Old Style', cursive;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
+  margin-top: 20px; /* Added margin above the header */
 }
 
 #name {
-  font-size: 1.2em;  /* Smaller font size */
-  color: var(--muted-purple);
+  font-size: 1.5em;
+  color: var(--muted-purple); /* Same color as the menu items */
   position: absolute;
   top: 10px;
-  left: 5%;  /* Shift name to the left */
-  letter-spacing: 2px;  /* Increase space between Gauri and Sastri */
+  left: 5%;
+  letter-spacing: 2px;
 }
 
 nav {
   position: absolute;
   top: 10px;
-  left: 5%;  /* Aligning the nav links to the top left */
+  right: 5%; /* Adjusted to right for top corner alignment */
   display: flex;
-  gap: 30px;  /* Added gap between buttons */
+  gap: 30px;
 }
 
 nav a {
-  margin: 0;
   text-decoration: none;
-  color: black;
-  font-family: 'Iowan Old Style', serif;
-  padding: 10px 20px;  /* Added padding */
-  border-radius: 5px;  /* Optional: rounded corners for a smoother look */
+  color: var(--muted-purple); /* Matching color to the "Gauri Sastri" text */
+  font-family: 'Iowan Old Style', cursive; 
+  padding: 10px 20px;
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-  background-color: var(--muted-purple);  /* Optional: background color change on hover */
-  color: var(--white);  /* Optional: text color change on hover */
+  background-color: var(--muted-purple); /* Change the background on hover */
+  color: var(--white); /* Text color changes to white on hover */
 }
+
 
 /* Main Banner */
 .banner {
   text-align: center;
   background-color: var(--white);
-  padding: 150px 20px;
+  padding: 300px 20px; /* Increased padding for a larger white area */
   position: relative;
 }
 
@@ -77,42 +78,59 @@ nav a:hover {
   font-size: 8vw;
   color: var(--coral);
   position: absolute;
-  top: 20%;
-  left: 50%;
+  top: 20%; /* Lowered position to create space above */
+  left: 45%;
   transform: translate(-50%, -50%);
   z-index: 1;
   opacity: 0;
   animation: fadeIn 1s forwards 0.5s;
+  font-family: 'Irish Grover', cursive;
 }
 
 .banner h2 {
   font-size: 8vw;
   color: var(--muted-purple);
   position: absolute;
-  top: 40%;
-  left: 50%;
+  top: 40%; /* Adjusted position for spacing */
+  left: 45%;
   transform: translate(-50%, -50%);
   z-index: 2;
   opacity: 0;
   animation: fadeIn 1s forwards 1s;
+  font-family: 'Irish Grover', cursive;
+}
+
+.banner h3 {
+  font-size: 4vw;
+  color: var(--light-teal); /* Changed to light teal */
+  position: absolute;
+  top: 55%; /* Adjusted position to move it lower */
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  opacity: 0;
+  animation: fadeIn 1s forwards 1.5s;
+  font-family: 'Irish Grover', cursive;
 }
 
 .banner img {
-  width: 200px;       /* Set the width to a fixed value */
-  height: 200px;      /* Set the height to match the width (square) */
-  object-fit: cover;  /* Ensures the image covers the square without distorting it */
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
   position: absolute;
-  right: 10%;
+  right: 15%;
   top: 20%;
   z-index: 2;
-  border-radius: 10px; /* Optional: adds rounded corners if desired */
+  border-radius: 10px;
+  border: 3px solid var(--muted-purple);
 }
+
 
 /* About Me Section */
 .about {
   background-color: var(--soft-pink);
   text-align: center;
-  padding: 100px 20px;
+  padding: 180px 20px; /* Extended padding for longer section */
   opacity: 0;
   animation: fadeIn 1s forwards 2s;
 }
@@ -133,7 +151,7 @@ nav a:hover {
 
 /* Portfolio Section */
 .portfolio {
-  padding: 150px 20px;
+  padding: 220px 20px; /* Extended padding */
   text-align: center;
   background-color: var(--light-teal);
   opacity: 0;
@@ -181,7 +199,7 @@ footer {
   background-color: var(--white);
   color: var(--coral);
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px; /* Extended padding for more space */
   font-size: 1.2em;
 }
 
